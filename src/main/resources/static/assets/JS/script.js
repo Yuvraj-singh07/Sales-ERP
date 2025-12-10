@@ -1,5 +1,5 @@
 // ------------ BASE URL -------------
-const BASE = "http://localhost:9090/api/v1/dashboard";
+const BASE = "https://sales-erp-production.up.railway.app/api/v1/dashboard";
 
 let salesChart = null;
 let topPerformanceChart = null;
