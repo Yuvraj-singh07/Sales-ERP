@@ -722,7 +722,7 @@ if (dailyCallForm) {
           createdDate: document.getElementById("lead_date").value
         };
         
-        return fetch("http://localhost:9090/leads", {
+        return fetch("https://sales-erp-production.up.railway.app/leads", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
