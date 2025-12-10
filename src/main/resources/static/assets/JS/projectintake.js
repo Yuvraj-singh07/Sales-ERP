@@ -232,7 +232,7 @@ function renderProjectTable(data) {
 async function loadAllCharts() {
   try {
     const [typeRes, statusRes, clientRes, overtimeRes] = await Promise.all([
-      fetch("/projects/group-by-type").then(r => r.json()),
+      fetch("http://localhost:9090/projects/group-by-type").then(r => r.json()),
       fetch("http://localhost:9090/projects/group-by-status").then(r => r.json()),
       fetch("http://localhost:9090/projects/group-by-client").then(r => r.json()),
       fetch("http://localhost:9090/projects/over-time").then(r => r.json())
