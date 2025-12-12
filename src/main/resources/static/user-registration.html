@@ -239,18 +239,28 @@
       } else fullName.classList.remove('is-invalid');
 
       // Email validation
-      const email = document.getElementById('email');
-      if (!email.value) {
-        email.classList.add('is-invalid');
-        valid = false;
-      } else email.classList.remove('is-invalid');
+      // Email validation - must be a gmail address
+const email = document.getElementById('email');
+const emailVal = email.value.trim();
+const emailRegex = /^[A-Za-z0-9._%+-]+@gmail\.com$/i;
+
+if (!emailVal || !emailRegex.test(emailVal)) {
+  email.classList.add('is-invalid');
+  valid = false;
+} else email.classList.remove('is-invalid');
+
 
       // Phone validation
-      const phone = document.getElementById('phone');
-      if (!phone.value || /\D/.test(phone.value)) {
-        phone.classList.add('is-invalid');
-        valid = false;
-      } else phone.classList.remove('is-invalid');
+// Phone validation - exactly 10 digits, digits only
+const phone = document.getElementById('phone');
+const phoneVal = phone.value.trim();
+const phoneRegex = /^\d{10}$/;
+
+if (!phoneVal || !phoneRegex.test(phoneVal)) {
+  phone.classList.add('is-invalid');
+  valid = false;
+} else phone.classList.remove('is-invalid');
+
 
       // Role
       const role = document.getElementById('role');
